@@ -5,8 +5,8 @@ let postRouter = require("../routes/post.route")
 let userRouter = require("../routes/user.route")
 
 app.use(express.json())
-app.use("/posts", postRouter)
-app.use("/users", userRouter)
+app.use("/api/posts", postRouter)
+app.use("/api/users", userRouter)
 
 
 app.get("*", (req, res, next) => {
