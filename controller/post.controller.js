@@ -13,7 +13,10 @@ let findPostById = async (req, res, next) => {
 }
 
 let addPost = async (req, res, next) => {
-    let data = req.body
+    let data = JSON.parse(req.body.body)
+    data.image = "/uploads/" + req.file.filename
+    console.log(data);
+    
     let post = await Post.create(data)
     res.status(201).json({name:"post", post})
 }
